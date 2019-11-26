@@ -1,0 +1,16 @@
+QueueExperiment:
+  handler: src/handlers/queue.handler
+  events:
+    - http:
+        path: /
+        method: post
+        private: true
+        cors: ${self:custom.http.cors}
+        request:
+          schema:
+            application/json: ${file(./config/schemas/experiment_request.json)}
+        authorizer:
+          name: authorizerFunc
+          type: request
+authorizerFunc:
+  handler: src/middlewares/verifyToken.handler
