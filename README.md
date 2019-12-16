@@ -1,4 +1,4 @@
-# serverless-verifyToken-authorizer
+# Serverless-VerifyToken-Authorizer
 This serverless authorizer is a code snippet that verifies JW token from the request. Plus, a unit test is added with Jest.
 
 **Included Resources:**
